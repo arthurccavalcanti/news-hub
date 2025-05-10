@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div_class="articles">
+        {% for article in articles %}
+            <article>
+                <h2> <a> href="{{ article[1].link }}
+                    {{article[1].title }}
+                    <p> {{article[1].published }} </p>
+                    <p> Fonte: {{article[0] }} </p>
+                </a>
+                </h2>
+            </article>
+        {% endfor %}    
+    </div_class>
+    <div class = "pagination">
+        {% if page > 1 %}
+            <a href="{{url_for('index', page=page-1)}}"> Anterior </a>
+        {% enfif %}
+        <a href="{{url_for('index', page=page+1)}}"> Próximo </a>
+        {% if page < total_pages %}
+
+        {% enfif %}
+    </div>
+{% endblock %}
