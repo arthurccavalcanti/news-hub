@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> TITULO AQUI </title>
+    <link rel="arquivo_css" href="{{url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+    <header>
+        <h1> header aqu </h1>
+        <form action="{{ url_for('search')}}" method="GET">
+            <input type="text" name="q" placeholder="Pesquise">
+            <button type="Submit"> Procurar </button>
+        </form>
+   </header>
+   {% block content %}{% endblock %}
+   
+
+
+</body>
+
+</html>
